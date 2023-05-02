@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  PHP_API_SERVER = "http://localhost/round_53/angular5/wedding-solutions/API";
+//   PHP_API_SERVER = "http://localhost/round_53/angular5/wedding-solutions/API"; 
+  PHP_API_SERVER = "http://localhost/WDPF/NG5/API";
 	constructor(private httpClient: HttpClient) {}
 	
 	readProducts(){
