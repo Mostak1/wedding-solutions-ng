@@ -1,0 +1,8 @@
+
+.btnsr{
+    background-color: #BE9A82;
+}
+.btnsr:hover{
+    background-color: #f8f4f1;
+    border: 1px solid #BE9A82;
+}

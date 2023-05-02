@@ -1,0 +1,17 @@
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+.fnt2{
+    font-family: 'Cormorant Garamond', serif;
+}
+.image {
+    background-image: url(../../assets/img/mt-1993-bg01.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    height: 600px;
+
+}
