@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#"><img width="270px" src="../../assets/img/ws.png" alt=""></a>
+    <a class="navbar-brand cll" href="#"><img width="270px" src="../../assets/img/ws.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,23 +17,25 @@
           <a class="nav-link" [routerLink]="['contact']">Contact Us</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
       </ul>
       <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
     </div>
-    
+
     <div class="nav-item">
       <!-- Button trigger modal -->
       <button type="button" class="btn btnsr" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -47,18 +49,74 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content ">
+      <button type="button" class="btn-close close_btn" data-bs-dismiss="modal" aria-label="Close">
+      </button>
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <p class="modal-title mx-auto titleclr" id="exampleModalLabel"><span class="title text-center d-block fs-1">Request A Callback</span> <span>We can call you in 30 seconds, just enter  your number below</span></p><br>
       </div>
+      <p class="titleclr"></p>
       <div class="modal-body">
-        ...
+        <form id="myForm">
+          <!-- <label class="form-control" for="name">Name:</label> -->
+          <input class="form-control mb-2" type="text" id="name" name="name" placeholder="Name*" required>
+          <!-- <label class="form-control" for="email">Email:</label> -->
+          <input class="form-control mb-2" type="email" id="email" name="email" placeholder="email@gmail.com" required>
+          <!-- <label class="form-control" for="phone">Phone:</label> -->
+          <input class="form-control mb-2" type="tel" id="phone" name="phone" placeholder="01777777777" required>
+          <button class="form-control btnsr mb-2" type="submit">Submit</button>
+        </form>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('.cll').on('click', function () {
+      alert('okk all');
+    });
+  })
+  $(document).ready(function () {
+
+    $('#myForm').submit(function (event) {
+      // Prevent the form from submitting
+      event.preventDefault();
+
+      // Get the values of the form fields
+      var name = $('#name').val();
+      var email = $('#email').val();
+      var phone = $('#phone').val();
+
+      // Validate the name field
+      if (name.length < 3) {
+        alert('Name must be at least 3 characters long');
+        return;
+      }
+
+      // Validate the email field
+      var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      // Validate the phone field
+      var phoneRegex = /^\d{10}$/;
+      if (!phoneRegex.test(phone)) {
+        alert('Please enter a 10 digit phone number');
+        return;
+      }
+
+      // If all fields are valid, submit the form
+      alert('Form submitted successfully');
+      $('#myForm')[0].reset();
+    });
+  });
+
+</script>

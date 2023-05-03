@@ -1,8 +1,27 @@
 
+a,p{
+    font-family: 'Poppins', sans-serif;
+
+    /* font-family: 'Cormorant Garamond', serif; */
+}
 .btnsr{
     background-color: #BE9A82;
+}
+.titleclr{
+color: #BE9A82;
+font-family: 'Cormorant Garamond', serif;
 }
 .btnsr:hover{
     background-color: #f8f4f1;
     border: 1px solid #BE9A82;
 }
+.close_btn {
+    position: absolute;
+    top: -0px;
+    right: -0px;
+    padding: 5px;
+    /* background-color: #BE9A82; */
+    color: #fff;
+    cursor: pointer;
+  }
+
