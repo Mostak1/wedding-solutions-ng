@@ -24,4 +24,8 @@ font-family: 'Cormorant Garamond', serif;
     color: #fff;
     cursor: pointer;
   }
+li a:hover{
+    color: #BE9A82;
+    background-color: #f3d2bc;
 
+}
